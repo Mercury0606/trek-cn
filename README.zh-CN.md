@@ -78,6 +78,8 @@ docker compose down
 
 推荐在 VPS 上使用 Docker Compose，先将仓库中的 `deploy/` 目录复制到服务器，再准备独立的 `data/`、`uploads/` 和 `.env`。域名、HTTPS 和反向代理属于第二阶段；VPS 初次验证时仍建议先限制为服务器本机访问，确认登录、行程、上传和重启保留数据都正常后再开放域名。
 
+完整迁移步骤见：[VPS 部署路线](./docs/vps-deployment.zh-CN.md)。
+
 VPS 部署时必须重新生成 `ENCRYPTION_KEY`，不要把本机 `.env`、数据库、上传文件或管理员密码上传到 GitHub。地图覆盖文件也要在服务器上按其许可和合规要求单独放置。
 
 ## 与上游同步
