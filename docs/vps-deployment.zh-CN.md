@@ -16,6 +16,21 @@
 
 把仓库 `deploy/docker-compose.local-cn.template.yml` 复制为服务器上的 `docker-compose.yml`，再把对应版本的前端覆盖文件复制到 `custom-frontend/`。如果要使用中国地图覆盖，还要把有权使用的 `admin0.geojson.gz` 和 `admin1.geojson.gz` 放到 `custom-atlas/`。
 
+当前版本的地图资产可以从 [v4.2.1-cn.4](https://github.com/Mercury0606/trek-cn/releases/tag/v4.2.1-cn.4) 下载：
+
+```bash
+curl -fL https://github.com/Mercury0606/trek-cn/releases/download/v4.2.1-cn.4/admin0.geojson.gz -o custom-atlas/admin0.geojson.gz
+curl -fL https://github.com/Mercury0606/trek-cn/releases/download/v4.2.1-cn.4/admin1.geojson.gz -o custom-atlas/admin1.geojson.gz
+shasum -a 256 custom-atlas/admin0.geojson.gz custom-atlas/admin1.geojson.gz
+```
+
+下载后应得到以下哈希：
+
+```text
+fb4514e70c4314c3dd15bdb5136a0a29e00dc5031db41f76c8dd3b82caa5c0f3  custom-atlas/admin0.geojson.gz
+b972a19c8f22fac41f8d8228816515e2daeaf8a91f882148283f0b2f7318d68b  custom-atlas/admin1.geojson.gz
+```
+
 ## 2. 首次上线前的配置
 
 在服务器上生成新的加密密钥：
@@ -88,4 +103,3 @@ ALLOWED_ORIGINS=https://trek.example.com
 4. 与 TREK 版本匹配的前端资源和 GeoJSON 回归测试。
 
 地图覆盖只改变显示图层，不把 Ladakh 等地区的数据库属性迁移到中国，也不改变已有访问记录的代码。
-
