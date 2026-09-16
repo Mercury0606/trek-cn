@@ -78,3 +78,17 @@ TREK 默认 Atlas 数据来自上游构建流程。中国专用 GeoJSON 的来�
 - 浏览器语言切换到简体中文后，主要界面显示中文；
 - 地图数据的来源和许可记录完整。
 
+## 6. 本地修复内容与 VPS 迁移
+
+本机版本通过 Compose 的只读 bind mount 覆盖了四类前端资源和两份 Atlas GeoJSON。公开仓库只保存可维护的配置、脚本和前端补丁，不保存本机账户、行程、照片、附件或来源/再分发许可尚未确认的 GeoJSON。
+
+迁移到 VPS 时：
+
+1. 先复制 `deploy/docker-compose.local-cn.template.yml` 为服务器上的 Compose 文件；
+2. 把你有权使用的 `admin0.geojson.gz` 和 `admin1.geojson.gz` 放到模板指定的 `custom-atlas/` 目录；
+3. 按模板放置对应版本的 `custom-frontend/` 文件；
+4. 新建 `.env`，生成新的 `ENCRYPTION_KEY`，并设置 `TZ=Asia/Shanghai`、`DEFAULT_LANGUAGE=zh`；
+5. 先只绑定 VPS 本机端口，完成健康检查和数据持久化验证；
+6. 最后再配置域名、HTTPS、反向代理、防火墙和备份。
+
+不要把本机 `data/`、`uploads/`、`.env` 或未确认授权的地图文件提交到公开仓库。
