@@ -74,7 +74,7 @@ docker compose down
 
 可公开维护的覆盖脚本、前端补丁和 VPS 配置模板放在 [`deploy/`](./deploy/) 下。实际 GeoJSON 数据因来源和再分发许可仍需单独确认，不随公开仓库上传。
 
-中国地图覆盖文件现在作为版本发布资产提供，并附带来源、哈希和合规边界说明：[中国地图数据来源与合规声明](./docs/map-data-compliance.zh-CN.md)。这份声明不等同于官方地图审核批准或平台审核结果。
+中国地图覆盖文件现在作为 [v4.2.1-cn.4 发布资产](https://github.com/Mercury0606/trek-cn/releases/tag/v4.2.1-cn.4)提供，并附带来源、哈希和合规边界说明：[中国地图数据来源与合规声明](./docs/map-data-compliance.zh-CN.md)。这份声明不等同于官方地图审核批准或平台审核结果。
 
 ## 部署到 VPS
 
