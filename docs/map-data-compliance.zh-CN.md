@@ -29,7 +29,7 @@ GeoJSON.CN 的资料页列出了来源资料的审图号 `GS(2024) 0650`。该�
 
 ## 发布文件校验
 
-本版本发布资产的 SHA-256：
+实际文件作为 [v4.2.1-cn.4 发布资产](https://github.com/Mercury0606/trek-cn/releases/tag/v4.2.1-cn.4)提供。发布资产的 SHA-256：
 
 ```text
 admin0.geojson.gz  fb4514e70c4314c3dd15bdb5136a0a29e00dc5031db41f76c8dd3b82caa5c0f3
@@ -37,4 +37,3 @@ admin1.geojson.gz  b972a19c8f22fac41f8d8228816515e2daeaf8a91f882148283f0b2f7318d
 ```
 
 发布前请核对下载文件哈希，并把数据来源、更新时间和许可记录保存在 VPS 的部署档案中。数据源或 TREK 版本变化后，应重新生成并重新验证，不要只替换文件名。
-
